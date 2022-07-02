@@ -8,7 +8,7 @@ package paquete02;
  *
  * @author SALA I
  */
-public class Menu {
+public abstract class Menu {
     protected String nombrePlato;
     protected double valorMenu;
     protected double valorInicialMenu;
@@ -24,9 +24,7 @@ public class Menu {
         nombrePlato = nP;
     }
     
-    public void establecerValorMenu(double vM){
-        valorMenu = vM;
-    }
+    public abstract void establecerValorMenu();
     
     public void establecerValorInicialMenu(double vIM){
         valorInicialMenu = vIM;

@@ -8,8 +8,15 @@ package paquete02;
  *
  * @author SALA I
  */
-public class Cuenta {
-    protected String nombre;
+public class Cuenta extends Menu {
+    String nombre;
+    double valorTotal;
+    double subtotal;
+    double IVA;
+    
+    public Cuenta (String nom,double vT, double sT, double iva){
+        super(nP,vM,vIM);
+    }
     
     
 }
