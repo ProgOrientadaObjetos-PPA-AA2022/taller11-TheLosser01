@@ -6,6 +6,10 @@
 package paquete01;
 
 import java.util.ArrayList;
+import paquete02.MenuCarta;
+import paquete02.MenuDia;
+import paquete02.MenuEconomico;
+import paquete02.MenuNinios;
 
 /**
  *
@@ -38,27 +42,56 @@ public class Ejecutor02 {
         
         // Lista de Menus
         ArrayList lista = new ArrayList<>();
-        
+        for (int i = 0; i < datos001.length; i++) {
+            MenuNinios mNino = new MenuNinios(datos001[i][0],
+                    Double.parseDouble(datos001[i][1]),
+                    Double.parseDouble(datos001[i][2]),
+                    Double.parseDouble(datos001[i][3]));
+            mNino.establecerValorMenu();
+            lista.add(mNino);
+        }
+        for (int i = 0; i < datos002.length; i++) {
+            MenuEconomico mEcon = new MenuEconomico(datos002[i][0],
+                    Double.parseDouble(datos002[i][1]),
+                    Double.parseDouble(datos002[i][2]));
+            mEcon.establecerValorMenu();
+            lista.add(mEcon);
+        }
+        for (int i = 0; i < datos003.length; i++) {
+            MenuDia mDia = new MenuDia(datos003[i][0],
+                    Double.parseDouble(datos003[i][1]),
+                    Double.parseDouble(datos003[i][2]),
+                    Double.parseDouble(datos003[i][3])
+            );
+            mDia.establecerValorMenu();
+            lista.add(mDia);
+        }
+        for (int i = 0; i < datos004.length; i++) {
+            MenuCarta mCarta = new MenuCarta(datos004[i][0],
+                    Double.parseDouble(datos004[i][1]),
+                    Double.parseDouble(datos004[i][2]),
+                    Double.parseDouble(datos004[i][3]),
+                    Double.parseDouble(datos004[i][4]));
+
+            mCarta.establecerValorMenu();
+            lista.add(mCarta);
+        }
+
         /* Agregar un proceso para generar objetos de tipo Menu Carta, Día, 
         Economico y Niño*. Cada arreglo datos, se corresponde a un tipo de Menú.
         Iterar y crear los objetos según corresponda. Cada objeto generado, 
         agregar al ArrayList lista*/
         // Inicio de solución
-        
         // Fin de solución
-        
-        
         for (int i = 0; i < lista.size(); i++) {
-            lista.get(i).establecerValorMenu();
+            lista.get(i).equals(i);
         }
-        
+
         // Un objeto de tipo Cuenta
-        Cuenta miCuenta = new Cuenta("Luis Andrade", lista, 10);
-        miCuenta.establecerSubtotal();
+        Cuenta miCuenta = new Cuenta("Luis Andrade", 10, lista);
+        miCuenta.establecerSubTotal();
         miCuenta.establecerValorCancelar();
         System.out.printf("%s\n", miCuenta);
-        
-
-
     }
+       
 }
